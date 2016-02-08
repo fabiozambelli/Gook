@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="biz.fz5.gook.model.Book" />
+	<import class="biz.fz5.gook.model.OAuthConfiguration" />
+	<class name="biz.fz5.gook.model.impl.BookImpl" table="gook_Book">
+		<cache usage="read-write" />
+		<id name="bookId" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="thumbnail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="canonicalVolumeLink" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="data" type="com.liferay.portal.dao.orm.hibernate.StringType" column="data_" />
+		<property name="comment" type="com.liferay.portal.dao.orm.hibernate.StringType" column="comment_" />
+	</class>
+	<class name="biz.fz5.gook.model.impl.OAuthConfigurationImpl" table="gook_OAuthConfiguration">
+		<cache usage="read-write" />
+		<id name="oauthKey" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="oauthValue" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

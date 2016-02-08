@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="biz.fz5.gook.model.Book">
+		<field name="bookId" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="thumbnail" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="canonicalVolumeLink" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="data" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="comment" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+	</model>
+	<model name="biz.fz5.gook.model.OAuthConfiguration">
+		<field name="oauthKey" type="String" />
+		<field name="oauthValue" type="String" />
+	</model>
+</model-hints>

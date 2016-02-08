@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="biz.fz5.gook">
+	<author>fabiozambelli</author>
+	<namespace>gook</namespace>
+
+	<entity name="Book" local-service="true" remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="bookId" type="String" primary="true" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		
+		<!-- Other fields -->
+		<column name="thumbnail" type="String" />
+		<column name="canonicalVolumeLink" type="String" />
+		<column name="data" type="String" />
+		<column name="comment" type="String" />
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>			
+		
+	</entity>
+	
+	<entity name="OAuthConfiguration" local-service="true" remote-service="false">
+
+		<column name="oauthKey" type="String" primary="true" />
+		<column name="oauthValue" type="String" />
+				
+	</entity>
+	
+</service-builder>
