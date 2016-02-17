@@ -1,0 +1,19 @@
+Bundle-Name: Gook Impl
+Bundle-SymbolicName: biz.fz5.gook.impls
+Bundle-Version: 1.0.0
+Import-Package:\
+	biz.fz5.gook.api,\
+	*;resolution:="optional"
+Private-Package: \
+	biz.fz5.gook.command,\
+	biz.fz5.gook.impls
+Service-Component: \
+	biz.fz5.gook.command.*,\
+	biz.fz5.gook.impls.*
+-buildpath: \
+	biz.fz5.gook.api;version=latest,\
+	biz.aQute.bnd.annotation,\
+	org.apache.felix.gogo.runtime,\
+	osgi.core,\
+	osgi.cmpn
+-sub: *.bnd
