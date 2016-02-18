@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="biz.fz5.gook.portlet-web-portlet" basedir="." default="deploy">
+	<property name="osgi.ide.dependencies" value="bnd.jar,freemarker.jar" />
+	<import file="../../build-common-osgi-plugin.xml" />
+</project>
