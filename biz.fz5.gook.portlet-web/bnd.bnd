@@ -20,6 +20,7 @@ Import-Package:\
 	com.liferay.portlet,\
 	com.liferay.util.bean,\
 	com.liferay.util.bridges.freemarker,\
+	biz.fz5.gook.api,\
 	javax.portlet,\
 	*;resolution:="optional"							
 Service-Component: biz.fz5.gook.portlet.*

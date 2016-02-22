@@ -14,6 +14,7 @@
 
 package biz.fz5.gook.portlet;
 
+import com.liferay.osgi.util.service.Reference;
 import com.liferay.osgi.util.service.ReflectionServiceTracker;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -25,11 +26,19 @@ import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
+import biz.fz5.gook.api.GoodBook;
+
 public class GoodBookPortlet extends FreeMarkerPortlet {
 	
 	private static final Log _log = LogFactoryUtil
 			.getLog(GoodBookPortlet.class);
 
+	private GoodBook goodBook;
+	
+	@Reference
+	public void setGoodBook(GoodBook goodBook) {
+		this.goodBook = goodBook;
+	}
 	
 	/**
      * An OSGi service to track and inject other services with the portlet. We
@@ -45,7 +54,7 @@ public class GoodBookPortlet extends FreeMarkerPortlet {
     	
     	_log.debug("doView");
     	
-		renderRequest.setAttribute("message", "Hello World");
+		renderRequest.setAttribute("message", goodBook.getBook());
 		super.doView(renderRequest, renderResponse);
 	}
 	
